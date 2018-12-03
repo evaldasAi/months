@@ -1,0 +1,33 @@
+*{
+    margin: 0px;
+    box-sizing: border-box;
+}
+
+.flex{
+    display: flex;
+}
+
+.container{
+    max-width: 1100px;
+    margin: 60px auto;
+}
+
+table {
+    border-collapse: collapse;
+    margin: auto;
+}
+
+.month th{
+    padding: 8px;
+    margin: 0px;
+    border-collapse: collapse;
+}
+
+.highlight{
+    background-color:lightblue;
+}
+
+#day, #weekDay{
+    text-align: center;
+    margin: 20px 0px;
+}
