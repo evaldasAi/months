@@ -17,6 +17,10 @@ table {
     margin: auto;
 }
 
+.header__title{
+    text-align: center;
+}
+
 .month th{
     padding: 8px;
     margin: 0px;
@@ -30,4 +34,20 @@ table {
 #day, #weekDay{
     text-align: center;
     margin: 20px 0px;
+}
+
+.summer {
+    background-color:rgb(255, 240, 110);
+}
+
+.autumn {
+    background-color:rgb(255, 187, 110);
+}
+
+.winter {
+    background-color:rgb(214, 239, 255);
+}
+
+.spring {
+    background-color:rgb(115, 228, 100);
 }
