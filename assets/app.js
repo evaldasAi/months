@@ -1,44 +1,36 @@
-(function() {
-    'use strict';
+'use strict';
 
-    let app = {
-        isLoading: true,
-        visibleCards: {},
-        spinner: document.querySelector('.loader'),
-        cardTemplate: document.querySelector('.cardTemplate'),
-        container: document.querySelector('#app'),
-        addDialog: document.querySelector('.dialog-container'),
-    };
+const bg = document.getElementById("bg");
+const month = document.getElementsByClassName("month");
+const day = document.getElementById("day");
+const weekday = document.getElementById("weekDay");
+let time = new Date();
 
-    //main month logic
-    const month = document.getElementsByClassName("month");
-    const day = document.getElementById("day");
-    const weekday = document.getElementById("weekDay");
-    let time = new Date();
+month[time.getMonth()].className = "month highlight";
+day.innerHTML = time.getDate() +" diena";
 
-    console.log(time);
+if (time.getDay() == 0){
+    weekday.innerHTML = "7-ienis";
+} else {
+    weekday.innerHTML = time.getDay() + "-ienis";
+};
 
-    month[time.getMonth()].className = "month highlight";
-    day.innerHTML = time.getDate() +" diena";
+// winter
+if ([11,0,1].includes(time.getMonth())) {
+    bg.style.backgroundImage = 'url("./assets/winter.jpg")';
+}
 
-    if (time.getDay() == 0){
-        weekday.innerHTML = "7-ienis";
-    } else {
-        weekday.innerHTML = time.getDay() + "-ienis";
-    };
+// spring
+if ([2,3,4].includes(time.getMonth())) {
+    bg.style.backgroundImage = 'url("./assets/spring.jpg")';
+}
 
-    //spinner control
-    if (app.isLoading) {
-        app.spinner.setAttribute('hidden', true);
-        app.container.removeAttribute('hidden');
-        app.isLoading = false;
-    }
+// summer
+if ([5,6,7].includes(time.getMonth())) {
+    bg.style.backgroundImage = 'url("./assets/summer.jpg")';
+}
 
-    // TODO add service worker code here
-    if ('serviceWorker' in navigator) {
-        navigator.serviceWorker
-            .register('./service-worker.js')
-            .then(function() { console.log('Service Worker Registered'); });
-    }
-//Finish function
-})();
+//autumn
+if ([8,9,10].includes(time.getMonth())) {
+    bg.style.backgroundImage = 'url("./assets/autumn.jpg")';
+}
